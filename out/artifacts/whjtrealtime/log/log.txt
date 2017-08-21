@@ -1,0 +1,24 @@
+realtime start
+[INFO ][2017-06-14 13:31:09][com.mchange.v2.log.MLog.<clinit>(MLog.java:80)]:MLog clients using log4j logging.
+[INFO ][2017-06-14 13:31:29][com.mchange.v2.c3p0.impl.C3P0ImplUtils.generateVmId(C3P0ImplUtils.java:125)]:Failed to get local InetAddress for VMID. This is unlikely to matter. At all. We'll add some extra randomness
+java.net.UnknownHostException: jtyssj.localdomain: jtyssj.localdomain: Name or service not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1473)
+	at com.mchange.v2.c3p0.impl.C3P0ImplUtils.generateVmId(C3P0ImplUtils.java:120)
+	at com.mchange.v2.c3p0.impl.C3P0ImplUtils.<clinit>(C3P0ImplUtils.java:98)
+	at com.mchange.v2.c3p0.impl.PoolBackedDataSourceBase.<init>(PoolBackedDataSourceBase.java:227)
+	at com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource.<init>(AbstractPoolBackedDataSource.java:62)
+	at com.mchange.v2.c3p0.ComboPooledDataSource.<init>(ComboPooledDataSource.java:109)
+	at com.mchange.v2.c3p0.ComboPooledDataSource.<init>(ComboPooledDataSource.java:105)
+	at com.taobao.util.C3P0Utils.<init>(C3P0Utils.java:29)
+	at com.taobao.util.C3P0Utils.getInstance(C3P0Utils.java:64)
+	at com.taobao.core.DataBaseToolService.getQueryResultBySql(DataBaseToolService.java:51)
+	at com.taobao.member.scheduler.LogReader.run(LogReader.java:48)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.net.UnknownHostException: jtyssj.localdomain: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1293)
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1469)
+	... 11 more
+[INFO ][2017-06-14 13:31:29][com.mchange.v2.c3p0.C3P0Registry.banner(C3P0Registry.java:204)]:Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO ][2017-06-14 13:31:29][com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource.getPoolManager(AbstractPoolBackedDataSource.java:462)]:Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> mr2pdtppej8075m4ii|4a891e7e, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> mr2pdtppej8075m4ii|4a891e7e, idleConnectionTestPeriod -> 0, initialPoolSize -> 100, jdbcUrl -> jdbc:mysql://192.168.232.99:9083/stevenkuang?useUnicode=true&characterEncoding=utf-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 20, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 10, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
